@@ -15,8 +15,9 @@ var topics = ["Basketball", "Soccer", "Football", "Hockey",
           method: "GET"
         }).done(function(response) {
         	console.log(response);
-        	console.log(response.data[0].embed_url);
-        	$("#add-sport").append("src", response.data[0].bitly_url);
+        	console.log(response.data[0].images.fixed_height_still.url);
+
+			$("#gifImage").attr("src", response.data[0].images.fixed_height_still.url);        	// $("#gifImage").append("src", response.data[0].embed_url);
 
 	    });
     }
