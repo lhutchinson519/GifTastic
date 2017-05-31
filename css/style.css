@@ -3,11 +3,19 @@ body{
 }
 
 .col-md-9 img{
-	display: inline-block;
+	display: block;
 	height: 150px;
     margin: 5px;
 }
 
 p {
+	display: block;
+}
+
+img{
+	display: inline-block;
+}
+
+.parent{
 	display: inline-block;
 }

@@ -37,19 +37,18 @@ var topics = ["Basketball", "Soccer", "Football", "Hockey",
 						        		$(this).attr("src", $(this).attr("still"))
 						        		});		        		
 
-	        	$("#image-container").append(image)
-
 	        	//create paragraph that holds the rating 
-				var rating = $("<div>")
-								.attr("rating", response.data[i].rating);
+				var rating = $("<p>")
+								.text("Rating: " + response.data[i].rating);
 								console.log(response.data[i].rating);
 
-				$("#image-container").append("Rating: " + response.data[i].rating);
+				// $("#image-container").append(rating);
 
-				// var parentImage= $("<div>")
-				// 						.attr("src", response.data[i].images.fixed_height_still.url)
-				// 						.attr("moving", response.data[i].images.fixed_height.url)
-				// 						.append("src", response.data[i].rating);
+				var parentImage= $("<div>")
+										.append(image)
+										.append(rating)
+										.addClass("parent")
+					        	$("#image-container").append(parentImage)
 					};
 				});
     		};
@@ -88,7 +87,3 @@ var topics = ["Basketball", "Soccer", "Football", "Hockey",
 
 	   	$(document).on("click", ".sport", displayTopicInfo);
 
-
-
-//clicking on picture to stop
-//add values to buttons to bring down 10 gifs
